@@ -1,0 +1,59 @@
+Certainly! Here's the setup and requirements for the Python-based ML trading bot using Alpaca API:
+
+### Setup and Requirements
+
+#### Packages and Libraries
+- **Python 3.7+**: Ensure Python is installed on your system.
+- **Alpaca API**: Access to Alpaca API for executing trades.
+  - Install the `lumibot` package which includes Alpaca integration:
+    ```bash
+    pip install lumibot
+    ```
+- **dotenv**: For loading environment variables from a `.env` file:
+  ```bash
+  pip install python-dotenv
+  ```
+- **yfinance**: For fetching risk-free rate data from Yahoo Finance:
+  ```bash
+  pip install yfinance
+  ```
+
+#### Environment Setup
+1. **Alpaca API Keys**:
+   - Sign up for an account and obtain API keys from [Alpaca Markets](https://alpaca.markets/).
+   - Set these keys as environment variables in a `.env` file in your project directory:
+     ```plaintext
+     ALPACA_API_KEY=your_api_key_here
+     ALPACA_API_SECRET=your_api_secret_here
+     ```
+   
+2. **Project Setup**:
+   - Clone the repository or create a new Python project.
+   - Install dependencies listed in `requirements.txt`:
+     ```bash
+     pip install -r requirements.txt
+     ```
+   
+3. **Run the Bot**:
+   - Execute the Python script `tradingbot.py` or the script where your bot logic resides:
+     ```bash
+     python tradingbot.py
+     ```
+   
+4. **Customization**:
+   - Modify `symbol` and `cash_at_risk` parameters in `initialize` method of `MLTrader` class for different trading symbols and risk tolerances.
+   - Implement custom sentiment analysis or adjust trading logic based on your requirements.
+
+### Example `.env` File
+Create a `.env` file in your project directory with the following content:
+```plaintext
+ALPACA_API_KEY=your_alpaca_api_key_here
+ALPACA_API_SECRET=your_alpaca_api_secret_here
+```
+
+### Notes
+- Ensure your environment variables are set correctly before running the script.
+- The script assumes a paper trading environment (`PAPER=True` in `ALPACA_CREDS`). Change to `False` for live trading after thorough testing.
+- Customize and extend the trading logic as needed, ensuring proper error handling and logging for robustness.
+
+This setup guide provides a clear path to setting up and running the Python-based ML trading bot using Alpaca API, focusing on simplicity and ease of use.
